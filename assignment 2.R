@@ -56,7 +56,7 @@ views<- c(1:15)
 for(i in 1:45){
    if(i%%3==0){
          views[t]<- fullData[i]
-      print(t)
+      #print(t)
       t<-t+1
       }
    }
@@ -64,7 +64,7 @@ answers<- c(1:15)
 for(i in 1:45){
   if(i%%2==0 & i%%3){
    answers[p]<- fullData[i]
-    print(p)
+    #print(p)
     p<-p+1
   }
 }
@@ -72,7 +72,7 @@ votes<- c(1:15)
 for(i in 1:45){
   if(i%%2 & i%%3){
    votes[q]<- fullData[i]
-    print(q)
+    #print(q)
     q<-q+1
   }
 }
@@ -87,11 +87,9 @@ tabs=100
 days <- 1
 Total <- function(n,p){
   choo= rbinom(n =1, size = 1, prob = p/n)
-  
+   p<- p+1
   if(!choo){
-    p<- p+1
     Total(n,p)
-    
   }
   else {
     return(p-1) #days passed before it
